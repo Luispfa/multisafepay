@@ -1,0 +1,14 @@
+<div class="container">
+    <div id="cuadricula1" class="show-grid">
+        {% for key,value in xml %}
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 text-right">{{ key }}:</div>
+                {% if key == 'created' or  key == 'modified' %}
+                    <div class="col-xs-6 col-md-4 text-left ">{{ value|date('d. M y') }}</div>
+                {% else %}
+                    <div class="col-xs-6 col-md-4 text-left ">{{ value }}</div>
+                {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+</div>

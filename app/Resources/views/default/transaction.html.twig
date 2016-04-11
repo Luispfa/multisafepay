@@ -1,0 +1,10 @@
+<div class="container">
+    <div id="cuadricula1" class="show-grid">
+        {% for key,value in xml %}
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 text-right">{{ key }}:</div>
+                <div class="col-xs-6 col-md-4 text-left ">{{ value|raw }}</div>
+            </div>
+        {% endfor %}
+    </div>
+</div>

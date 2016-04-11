@@ -1,0 +1,31 @@
+{% extends '::base.html.twig' %}
+
+
+{% block body %}
+<div id="cabecera">
+   <h1 class="">MultiSafePay <small class="text-muted">{{ user }}</small></h1>
+</div>
+
+<div class="navbar navbar-inverse">
+  <a class="navbar-brand" href="{{ path('MSP_homepage')}}">Login</a> |
+  <a class="navbar-brand" href="#" id="a_ewallet">Ewallet</a> |
+  <a class="navbar-brand" href="#" id="a_transaction">Transaction info</a> |
+  <a class="navbar-brand" href="#" id="a_payment">Payment Details</a> |
+  <a class="navbar-brand" href="#" id="a_customer">Customer info</a> |
+  <a class="navbar-brand" href="#" id="a_delivery">Customer delivery</a> |
+  <a class="navbar-brand" href="#" id="a_shopping">Shopping cart</a>
+</div>
+
+<div id="contenido">
+{% block contenido %}
+
+{% endblock %}
+</div>
+
+<div id="pie">
+<hr/>
+<div align="center">- pie de página -</div>
+</div>
+
+{% endblock %}
+

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}
+            <link href="{{ asset('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css') }}" type="text/css" rel="stylesheet" />
+        {% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+
+    </head>
+    <body>
+    {% block body %}{% endblock %}
+    {% block javascripts %}
+        <script src="{{ asset('//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js') }}"></script>
+        <script src="{{ asset('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js') }}"></script>
+        <script>
+            $(document).ready(function () {
+                callAjax = function ($path, $formdata, $tag) {
+                    $.ajax({
+                        type: "POST",
+                        url: $path,
+                        data: {formdata: $formdata},
+                        async: true,
+                        dataType: "json",
+                        success: function ($data) {
+                            if ($data.message == 'success') {
+                                $('#' + $tag).html($data.xml);
+                            }
+                        },
+                        error: function (XMLHttpRequest, textStatus, errorThrown) {
+                            console.log(XMLHttpRequest)
+                            console.log(textStatus)
+                        },
+                    });
+                };
+
+                $('#formLogin').submit(function (e) {
+                    e.preventDefault();
+                    var $formdata = $(this).serialize();
+                    callAjax("{{ path('MSP_login')}}", $formdata, 'cabecera .text-muted');
+                });
+
+                $('#formLogout').submit(function (e) {
+                    e.preventDefault();
+                    var $formdata = $(this).serialize();
+                    callAjax("{{ path('MSP_logout')}}", $formdata, 'cabecera .text-muted');
+                });
+
+                $('#a_ewallet').on('click', function (e) {
+                    e.preventDefault();
+                    callAjax("{{ path('MSP_ewallet')}}", '', 'contenido');
+                });
+
+                $('#a_transaction').on('click', function (e) {
+                    e.preventDefault();
+                    callAjax("{{ path('MSP_transaction')}}", '', 'contenido');
+                });
+
+                $('#a_payment').on('click', function (e) {
+                    e.preventDefault();
+                    callAjax("{{ path('MSP_payment')}}", '', 'contenido');
+                });
+
+                $('#a_customer').on('click', function (e) {
+                    e.preventDefault();
+                    callAjax("{{ path('MSP_customer')}}", '', 'contenido');
+                });
+
+                $('#a_delivery').on('click', function (e) {
+                    e.preventDefault();
+                    callAjax("{{ path('MSP_customer_delivery')}}", '', 'contenido');
+                });
+
+                $('#a_shopping').on('click', function (e) {
+                    e.preventDefault();
+                    callAjax("{{ path('MSP_shopping_cart')}}", '', 'contenido');
+                });
+            });
+        </script>
+    {% endblock %}
+</body>
+</html>
