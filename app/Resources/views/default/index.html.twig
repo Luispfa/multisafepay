@@ -7,26 +7,30 @@
 
 {% block contenido %}
     <form class="container-fluid" id="formLogin" name="formLogin" action="" method="POST">
-        <div class="form-group">
+        <div class="row">
+            <div class="form-group col-sm-6">
                 <label for="account" class="control-label">account</label>
                 <input type="text" class="form-control" name="account" id="account" value="10015043" placeholder="account">
-        </div>
-        <div class="form-group">
+            </div>
+            <div class="form-group col-sm-6">
                 <label for="site_id" class="control-label">site_id</label>
                 <input type="text" class="form-control" name="site_id" id="site_id" value="183" placeholder="site_id">
-        </div>
-        <div class="form-group">
+            </div>
+            <div class="form-group col-sm-6">
                 <label for="site_secure_code" class="control-label">site_secure_code</label>
                 <input type="text" class="form-control" name="site_secure_code" id="site_secure_code" value="029834" placeholder="site_secure_code">
-        </div>
-        <div class="form-group">
-                <button type="submit" class="btn btn-default" value="login">Log in</button>
+            </div>
+            <div class="form-group col-sm-12">
+                <button type="submit" class="btn btn-primary" value="login">Log in</button>
+            </div>
         </div>
     </form>
 
     <form class="container-fluid" id="formLogout" name="formLogout" action="" method="POST">
-        <div class="form-group">
+        <div class="row">
+            <div class="form-group col-sm-12">
                 <button type="submit" class="btn btn-default" value="logout">Log out</button>
+            </div>
         </div>
     </form>
     <div id="xml"></div>

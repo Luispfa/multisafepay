@@ -1,0 +1,18 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 11-abr-2016, 15:45:46
+    Author     : luispfaep
+*/
+
+body {
+    background: rgb(117,196,213) !important;
+}
+
+#cuadricula1 .row .col-sm-6 {
+    color: #FFF;
+    font-weight: 600;
+}

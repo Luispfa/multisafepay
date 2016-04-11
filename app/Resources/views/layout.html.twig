@@ -2,11 +2,11 @@
 
 
 {% block body %}
-<div id="cabecera">
+<div id="cabecera" class="container-fluid">
    <h1 class="">MultiSafePay <small class="text-muted">{{ user }}</small></h1>
 </div>
 
-<div class="navbar navbar-inverse">
+<div class="navbar navbar-inverse container-fluid">
   <a class="navbar-brand" href="{{ path('MSP_homepage')}}">Login</a> |
   <a class="navbar-brand" href="#" id="a_ewallet">Ewallet</a> |
   <a class="navbar-brand" href="#" id="a_transaction">Transaction info</a> |
@@ -16,7 +16,7 @@
   <a class="navbar-brand" href="#" id="a_shopping">Shopping cart</a>
 </div>
 
-<div id="contenido">
+<div id="contenido" class="container-fluid">
 {% block contenido %}
 
 {% endblock %}
